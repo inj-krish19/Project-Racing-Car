@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Racing</title>
+    <link rel="shortcut icon" href="./Mode Images/Racing Car.webp" type="x-icon/image">
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        align-items: center;
+        background: #27005D;
+    }
+
+    .ModePackage {
+        
+        margin-top: -120px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 600px;
+        width: 1000px;
+        background: #9400FF;
+        border-radius: 30px;
+    }
+
+    .ModeCard {
+        display: block;
+        margin: 10px;
+        height: 500px;
+        width: 300px;
+        background: #BC7AF9;
+        border-radius: 15px;
+        transition: 0.5s;
+    }
+
+    #casual {
+        display: block;
+    }
+
+    #racing {
+        display: block;
+    }
+
+    #duration {
+        display: block;
+    }
+
+    #infinite {
+        display: block;
+    }
+
+    .heading {
+        display: none;
+        text-align: center;
+        color: #FAF3F0;
+    }
+
+    #head {
+        font-size: 50px;
+        color: #FEFFAC;
+    }
+
+    #casual:hover {
+        height: 550px;
+        width: 660px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    #racing:hover {
+        height: 550px;
+        width: 660px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    #duration:hover {
+        height: 550px;
+        width: 660px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    #infinite:hover {
+        height: 550px;
+        width: 660px;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    .ModeCard p {
+        padding: 25px 26px;
+        color: #FFCACC;
+        font-size: 20px;
+    }
+
+    .ModeCard {
+        overflow: clip;
+    }
+
+    .DivForSelector {
+
+        margin-top: -60px;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 700px;
+        width: 1050px;
+        background: #9400FF;
+        border-radius: 2%;
+        overflow: hidden;
+
+    }
+
+    .DivForCars {
+
+        display: flex;
+        float: left;
+        margin: 5px;
+        height: 180px;
+        flex-direction: row-reverse;
+        width: 195px;
+        background: #BC7AF9;
+        transition: 0.5s;
+        border: 2px solid black;
+        /* border-color: linear-gradient(blue,red,green); */
+        border-radius: 5%;
+
+    }
+
+    .addBorder {
+        border: 2px solid black;
+    }
+
+    .DivForHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .DivForHeading h2 {
+        color: rgb(255, 159, 80);
+    }
+
+    button {
+        margin: 20px 0px 0px 500px;
+        height: 30px;
+        width: 70px;
+        background: purple;
+        border-radius: 10%;
+    }
+
+    #firstImage {
+        background: url('./Final\ Cars/0.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #secondImage {
+        background: url('./Final\ Cars/1.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #thirdImage {
+        background: url('./Final\ Cars/3.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #fourthImage {
+        background: url('./Final\ Cars/4.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #fifthImage {
+        background: url('./Final\ Cars/5.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #sixthImage {
+        background: url('./Final\ Cars/6.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #seventhImage {
+        background: url('./Final\ Cars/7.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #eigthImage {
+        background: url('./Final\ Cars/8.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #ninthImage {
+        background: url('./Final\ Cars/9.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #tenthImage {
+        background: url('./Final\ Cars/10.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #eleventhImage {
+        background: url('./Final\ Cars/11.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #twelvethImage {
+        background: url('./Final\ Cars/12.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #thirteenthImage {
+        background: url('./Final\ Cars/13.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #fourteenthImage {
+        background: url('./Final\ Cars/14.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #fifteenthImage {
+        background: url('./Final\ Cars/15.png') no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    #fifteenthImage h3 {
+        padding-right: 5px;
+        font-size: medium;
+        color: white;
+    }
+
+    #back{
+        margin : 10px 1400px 0px 0px;
+        height: 55px;
+        width: 55px;
+        background : url('./UI\ and\ Button\ Images/back.png');
+    }
+
+</style>
+
+<body>
+
+    <button id="back" onclick="location.href = './index.html'"></button>
+
+    <div class="DivForSelector" id="DivForSelector">
+
+        <div class="DivForHeading" >
+            <h2 id="DivForHeading">Pick A Car</h2>
+        </div>
+
+        <div class="DivForCars" id="firstImage" onclick=callValue(0)></div>
+        <div class="DivForCars" id="secondImage" onclick=callValue(1)></div>
+        <div class="DivForCars" id="thirdImage" onclick=callValue(3)></div>
+        <div class="DivForCars" id="fourthImage" onclick=callValue(4)></div>
+        <div class="DivForCars" id="fifthImage" onclick=callValue(5)></div>
+        <div class="DivForCars" id="sixthImage" onclick=callValue(6)></div>
+        <div class="DivForCars" id="seventhImage" onclick=callValue(7)></div>
+        <div class="DivForCars" id="eigthImage" onclick=callValue(8)></div>
+        <div class="DivForCars" id="ninthImage" onclick=callValue(9)></div>
+        <div class="DivForCars" id="tenthImage" onclick=callValue(10)></div>
+        <div class="DivForCars" id="eleventhImage" onclick=callValue(11)></div>
+        <div class="DivForCars" id="twelvethImage" onclick=callValue(12)></div>
+        <div class="DivForCars" id="thirteenthImage" onclick=callValue(13)></div>
+        <div class="DivForCars" id="fourteenthImage" onclick=callValue(14)></div>
+        <div class="DivForCars" id="fifteenthImage" onclick=callValue(15)>
+            <h3>Default</h3>
+        </div>
+
+        <button id="choose">Choose</button>
+
+    </div>
+
+    <h1 class="heading" id="head">
+        Modes
+    </h1>
+
+    <div class="ModePackage">
+
+        <div class="ModeCard" id="casual" onclick='location.href="./Casual Mode.html"'>
+            <h1 class="heading">
+                Casual <br> Mode
+            </h1>
+
+            <p class="content">
+                Casual Mode Is a Mode That Is Created For Knowing The Game Sense . In Casual Mode
+                Player Should Try To Practice and Give Best Of The Knock to Win Racing Mode.
+                Player Also Try Here To Beat Their Own Best Score.
+                One Of The Simplest Mode and Preferable by Childs.
+            </p>
+
+        </div>
+
+        <div class="ModeCard" id="racing" onclick='location.href="./Racing Mode.html"'>
+            <h1 class="heading">
+                Racing <br> Mode
+            </h1>
+
+            <p class="content">
+                Racing Mode Is a Main Mode and Attraction Of The Game . Here Player Should Try To Beat
+                Other Cars And Try To Be #1 in that F1 Racing Track . Here All Things Are Setted as F1
+                Racing Car and Regulations. Player Like This Mode Because Its Looking Professional Racing Track.
+            </p>
+
+        </div>
+
+        <div class="ModeCard" id="duration" onclick='location.href="./Duration Mode.html"'>
+            <h1 class="heading">
+                Duration <br> Mode
+            </h1>
+
+            <p class="content">
+                Duration Mode Is One Of The Most Favourite Mode . Here Player Have To Score Maximum Score He Can
+                Achieve in a Particular Time Limit. Have To Collect Time Increaser Blocks .
+                <b>Max 100 Blocks for Increasing Duration and Score Highest Score.</b>
+            </p>
+
+        </div>
+
+        <div class="ModeCard" id="infinite" onclick='location.href="./Infinite Drive.html"'>
+            <h1 class="heading">
+                Infinite <br> Drive
+            </h1>
+
+            <p class="content">
+                Infinite Drive Is a Mode Where Player Play This Mode To Beat His Own Best Score .
+                Infinite Drive Is Created to Play This Mode and Relax.
+                Here You Get Least Obstacles to Clear . As Mode Name It Doesn't Have End.
+                <b>Your PC Should Enough Capable To Load This Mode</b>
+            </p>
+
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+        var audio_ = new Audio();
+        audio_.src = './Sounds/relaxcarBGM.mp3';
+        audio_.loop = true;
+        audio_.play();
+
+        localStorage.carSelected = 15;
+
+        function callValue(i) {
+            console.log('I AM CALLED', i);
+            if(i < 2){
+                document.getElementById("DivForHeading").innerHTML = "Selected " + (i+1);
+            }else{
+                document.getElementById("DivForHeading").innerHTML = "Selected " + i;
+            }
+            localStorage.carSelected = i;
+        }
+
+        $(document).ready(function () {
+            $(".DivForCars").click(
+                function () {
+                    $(".DivForCars h3").css({
+                        "display": "none",
+                    })
+                });
+        });
+
+        $(document).ready(function () {
+            $("#firstImage").hover(
+                function () {
+                    $("#firstImage").css({
+                        "border": "2px solid red",
+                    })
+                },
+                function () {
+                    $("#firstImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+            });
+
+            $(document).ready(function () {
+            $("#firstImage").click(
+                function () {
+                    $("#firstImage").css({
+                        "border": "2px solid red",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#secondImage").hover(
+                function () {
+                    $("#secondImage").css({
+                        "border": "2px solid red",
+                    })
+                },
+                function () {
+                    $("#secondImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#secondImage").click(
+                function () {
+                    $("#secondImage").css({
+                        "border": "2px solid red",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#thirdImage").hover(
+                function () {
+                    $("#thirdImage").css({
+                        "border": "2px solid red",
+                    })
+                },
+                function () {
+                    $("#thirdImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#thirdImage").click(
+                function () {
+                    $("#thirdImage").css({
+                        "border": "2px solid red",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#fourthImage").hover(
+                function () {
+                    $("#fourthImage").css({
+                        "border": "2px solid red",
+                    })
+                },
+                function () {
+                    $("#fourthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#fourthImage").click(
+                function () {
+                    $("#fourthImage").css({
+                        "border": "2px solid red",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#fifthImage").hover(
+                function () {
+                    $("#fifthImage").css({
+                        "border": "2px solid red",
+                    })
+                },
+                function () {
+                    $("#fifthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#fifthImage").click(
+                function () {
+                    $("#fifthImage").css({
+                        "border": "2px solid red",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#sixthImage").hover(
+                function () {
+                    $("#sixthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                },
+                function () {
+                    $("#sixthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#sixthImage").click(
+                function () {
+                    $("#sixthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#seventhImage").hover(
+                function () {
+                    $("#seventhImage").css({
+                        "border": "2px solid aqua",
+                    })
+                },
+                function () {
+                    $("#seventhImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#seventhImage").click(
+                function () {
+                    $("#seventhImage").css({
+                        "border": "2px solid aqua",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#eigthImage").hover(
+                function () {
+                    $("#eigthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                },
+                function () {
+                    $("#eigthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#eigthImage").click(
+                function () {
+                    $("#eigthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#ninthImage").hover(
+                function () {
+                    $("#ninthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                },
+                function () {
+                    $("#ninthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#ninthImage").click(
+                function () {
+                    $("#ninthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#tenthImage").hover(
+                function () {
+                    $("#tenthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                },
+                function () {
+                    $("#tenthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#tenthImage").click(
+                function () {
+                    $("#tenthImage").css({
+                        "border": "2px solid aqua",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#eleventhImage").hover(
+                function () {
+                    $("#eleventhImage").css({
+                        "border": "2px solid green",
+                    })
+                },
+                function () {
+                    $("#eleventhImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#eleventhImage").click(
+                function () {
+                    $("#eleventhImage").css({
+                        "border": "2px solid green",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#twelvethImage").hover(
+                function () {
+                    $("#twelvethImage").css({
+                        "border": "2px solid green",
+                    })
+                },
+                function () {
+                    $("#twelvethImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#twelvethImage").click(
+                function () {
+                    $("#twelvethImage").css({
+                        "border": "2px solid green",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#thirteenthImage").hover(
+                function () {
+                    $("#thirteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                },
+                function () {
+                    $("#thirteenthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#thirteenthImage").click(
+                function () {
+                    $("#thirteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#fourteenthImage").hover(
+                function () {
+                    $("#fourteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                },
+                function () {
+                    $("#fourteenthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#fourteenthImage").click(
+                function () {
+                    $("#fourteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#fifteenthImage").hover(
+                function () {
+                    $("#fifteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                },
+                function () {
+                    $("#fifteenthImage").css({
+                        "border": "2px solid black",
+                    });
+                });
+
+            $("#fifteenthImage").click(
+                function () {
+                    $("#fifteenthImage").css({
+                        "border": "2px solid green",
+                    })
+                });
+
+        });
+
+        $(document).ready(function () {
+            $("#choose").click(
+                function () {
+                    $(".DivForSelector").css({
+                        "display": "none",
+                    }),
+                        $(".heading").css({
+                            "display": "block",
+                        }),
+                        $(".ModePackage").css({
+                            "display": "flex",
+                        }),
+                        $("#back").css({
+                            "margin-top": "-25px",
+                        })
+                })
+        });
+
+        $(document).ready(function () {
+            $("#choose").click(
+                function () {
+                    $("#head").css({
+                        "display": "block",
+                    })
+                },
+                function () {
+                    $(".ModePackaae").css({
+                        "display": "flex",
+                    })
+                })
+        });
+
+
+
+        // console.log(innerHeight, innerWidth);//786 1392
+
+        $(document).ready(function () {
+            $("#casual").hover(
+                function () {
+                    $("#casual p").hide();
+                    $("#casual").css({
+                        "background-size": "450px 400px",
+                        "background": "url('./Mode Images/Casual Mode.png') no-repeat",
+                        "background-position": "center",
+                    });
+                }, function () {
+                    $("#casual p").show();
+                    $("#casual").css({
+                        "display": "block",
+                        "background": "#BC7AF9"
+                    });
+                });
+        });
+
+        $(document).ready(function () {
+            $("#racing").hover(
+                function () {
+                    $("#racing p").hide();
+                    $("#racing").css({
+                        "background-size": "450px 400px",
+                        "background": "url('./Mode Images/Racing Mode.png') no-repeat",
+                        "background-position": "center",
+                    });
+                }, function () {
+                    $("#racing p").show();
+                    $("#racing").css({
+                        "display": "block",
+                        "background": "#BC7AF9"
+                    });
+                });
+        });
+
+        $(document).ready(function () {
+            $("#duration").hover(
+                function () {
+                    $("#duration p").hide();
+                    $("#duration").css({
+                        "background-size": "450px 400px",
+                        "background": "url('./Mode Images/Duration Mode.png') no-repeat",
+                        "background-position": "center",
+                    });
+                }, function () {
+                    $("#duration p").show();
+                    $("#duration").css({
+                        "display": "block",
+                        "background": "#BC7AF9"
+                    });
+                });
+        });
+
+        $(document).ready(function () {
+            $("#infinite").hover(
+                function () {
+                    $("#infinite p").hide();
+                    $("#infinite").css({
+                        "background-size": "450px 400px",
+                        "background": "url('./Mode Images/Infinite Mode.png') no-repeat",
+                        "background-position": "center",
+                    });
+                }, function () {
+                    $("#infinite p").show();
+                    $("#infinite").css({
+                        "display": "block",
+                        "background": "#BC7AF9"
+                    });
+                });
+        });
+
+    </script>
+</body>
+
+</html>
