@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Racing</title>
     <meta name="description" content="This Is a Racing Car Game made by inj_krish and Published through Github.com " />
-    <meta name="keywords" content="Racing Car,Raing Car Game,Cars,3D Racing Car,3D Racing Car Game,inj-krish19,
+    <meta name="keywords" keywords="Racing Car,Raing Car Game,Cars,3D Racing Car,3D Racing Car Game,inj-krish19,
     inj_krish19,Racing Car inj_krish19,Racing Car inj-krish19,KRISH SHAH ,Rollwalla Computer Center,Department Of Computer Sciece,
     KRISH SHAH Racing Car Game ,krish shah ,racing car by Krish,Department Of Computer Sciece Project,Ahmedabad,google,
     Hackerrank inj-krish19,racing car game online ,car game online ,without download playing game,mode based racing car game,
@@ -269,150 +269,8 @@
     <link rel="canonical" href="https://www.wikipedia.org/">
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="./Mode Images/Racing Car.webp" type="x-icon/image">
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<style>
-    * {
-        margin: 0;
-        resize: none;
-    }
-
-    @media screen and (orientation : landscape) {
-
-        body {
-            display: flex;
-            height: 90%;
-            width: 100%;
-        }
-
-        #racingCarVideo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: fixed;
-            z-index: -1;
-        }
-
-        .message {
-            display: none;
-        }
-
-        button {
-            margin: 35% 0% 0% 75%;
-            height: 50px;
-            width: 150px;
-            border: none;
-            outline: none;
-            color: #2f8abb;
-            font-weight: bolder;
-            cursor: pointer;
-            position: relative;
-            z-index: 0;
-            border-radius: 12px;
-        }
-
-        button::after {
-            content: "";
-            z-index: -1;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            left: 0;
-            top: 0;
-            border-radius: 10px;
-            /* transition: 0.2s ease-in; */
-        }
-
-        button::before {
-            content: "";
-            background: linear-gradient(45deg, red, orange, yellow, green, #00ffd5, blue, pink, red, orange, yellow);
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            z-index: -1;
-            background-size: 900%;
-            z-index: -1;
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            filter: blur(2px);
-            animation: glowButton 10s linear infinite;
-            transition: opacity 0.3s ease-in-out;
-            border-radius: 10px;
-            opacity: 1;
-        }
-
-        @keyframes glowButton {
-            0% {
-                background-position: 0 0;
-            }
-
-            50% {
-                background-position: 400% 0;
-            }
-
-            100% {
-                background-position: 0 0;
-            }
-        }
-
-        button:hover::before {
-            opacity: 1;
-        }
-
-        button:active::after {
-            background: transparent
-        }
-
-        button:active {
-            font-weight: bold;
-        }
-
-        button:hover {
-            animation: bigFonts 2s 1 linear;
-            font-size: 130%;
-            color: #00ffd5;
-        }
-
-        @keyframes bigFonts {
-            0% {
-                font-size: 100%;
-                color: blue;
-            }
-
-            50% {
-                font-size: 125%;
-                color: green;
-            }
-
-            100% {
-                font-size: 130%;
-                color: #00ffd5;
-            }
-        }
-
-    }
-
-    @media screen and (orientation : portrait) {
-
-        body {
-            justify-content: center;
-            align-items: center;
-        }
-
-        .message {
-            display: block;
-        }
-
-        .start {
-            display: none;
-        }
-
-        #racingCarVideo {
-            display: none;
-        }
-
-    }
-</style>
 
 <body>
     <h1 class="message">
@@ -425,12 +283,5 @@
 
     <button class="start" onclick="location.href='./Racing Car.html'">Start Game</button>
 </body>
-<script>
-
-    var playVideo = document.querySelector("#racingCarVideo");
-
-    playVideo.play();
-
-</script>
-
+<script src="js/index.js"></script>
 </html>
