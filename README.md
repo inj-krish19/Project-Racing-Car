@@ -38,11 +38,15 @@ Second : Brake         : For Avoiding Car Blast For 1 second
 
 At Top Right Side there are three score that are 
 First  : Score                 : It shows Current Score Of The Game 
+
 Second : Sessions' Best Score  : It Shows Best Score Of This Session
+
 Third  : All Time Best Score   : It Shows Best Score Of All Time 
 
 
 ********** For Duration Mode Only ********** 
+
+
 Fourth : Time Stamp and Time Message Is there 
 
 => At Middle Right Side there is Message That Is Blinking and giving Message About your Gameplay
@@ -53,6 +57,4 @@ Second  : Right : For Changing Lane To Right Side
 Third   : Up    : For Going Up On Track and little Speed Boost
 Fourth  : Down  : For Going Down On Track and little Speed Decreases
 
-
 Thanks For Accessing It
-Thanks For accessing it .
