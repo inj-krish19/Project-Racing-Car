@@ -1,0 +1,412 @@
+@media screen and (orientation : portrait) {
+    body {
+        display: flex;
+    }
+
+    #myCanvas {
+        display: none;
+    }
+
+    .Controller,
+    .toolBox,
+    .alertBox,
+    .menuBar,
+    .messageBoard,
+    .scoreBoard,
+    .skip,
+    video {
+        display: none;
+    }
+
+    #result {
+        display: none;
+    }
+
+}
+
+@media screen and (orientation : landscape) {
+
+    body {
+        margin: 0;
+        animation: doBackground 47s infinite linear;
+    }
+
+    @keyframes doBackground {
+        0% {
+            background-color: #00ffd5;
+        }
+
+        8% {
+            background-color: #4e1ba5;
+        }
+
+        16% {
+            background-color: rgb(254, 9, 205);
+        }
+
+        25% {
+            background-color: rosybrown;
+        }
+
+        33% {
+            background-color: royalblue;
+        }
+
+        41% {
+            background-color: lightyellow;
+        }
+
+        50% {
+            background-color: orange;
+        }
+
+        58% {
+            background-color: blue;
+        }
+
+        69% {
+            background-color: lightblue;
+        }
+
+        75% {
+            background-color: lightskyblue;
+        }
+
+        83% {
+            background-color: lightsalmon;
+        }
+
+        90% {
+            background-color: lightgreen;
+        }
+
+        99% {
+            background-color: green;
+        }
+
+        100% {
+            background-color: #00ffd5;
+        }
+    }
+
+    #errorMessage,
+    .hideAllContent,
+    div {
+        display: none;
+    }
+
+    #myCanvas {
+        z-index: -1;
+    }
+
+    #InfiniteDriveVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: fixed;
+        z-index: -1;
+    }
+
+    .Controller {
+        margin: -20% 0% 0% 83%;
+        height: 200px;
+        width: 200px;
+        z-index: 1;
+    }
+
+    .Controller button {
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        border-color: rgb(133, 30, 230);
+        border-width: 2px;
+    }
+
+    .RightLeft {
+        margin: 0px 0px 20px 0px;
+    }
+
+    #forLeft {
+        background: url('../UI and Button Images/Left.png');
+    }
+
+    #forRight {
+        background: url('../UI and Button Images/Right.png');
+    }
+
+    #forUp {
+        background: url('../UI and Button Images/Up.png');
+    }
+
+    #forDown {
+        background: url('../UI and Button Images/Down.png');
+    }
+
+    .toolBox {
+        margin: -13% 0% 0% 3.5%;
+    }
+
+    .toolBox .pedals button {
+        width: 100px;
+        height: 150px;
+        border-radius: 2%;
+    }
+
+    #accelerator {
+        background: url('../UI and Button Images/accelerator.png');
+        border-color: white;
+    }
+
+    #brake {
+        background: url('../UI and Button Images/brake.png');
+        border-color: white;
+    }
+
+    .menuBar {
+        margin: -37% 0% 0% 0.75%;
+        padding: 5px;
+        height: 180px;
+        width: 180px;
+    }
+
+    .menuBar button {
+        height: 50px;
+        width: 50px;
+        border-color: white;
+        border-radius: 15%;
+    }
+
+    #PauseResume {
+        background: url('../UI and Button Images/pause.png');
+    }
+
+    #Back {
+        background: url('../UI and Button Images/Back.png');
+    }
+
+    #audioYesNo {
+        background: url('../UI and Button Images/MUSICON.png');
+    }
+
+    .scoreBoard {
+        margin: -8% 0% 0% 80%;
+        height: 300px;
+        width: 300px;
+        z-index: 1;
+    }
+
+    .scoreBoard p {
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(254, 9, 205);
+    }
+
+    .messageBoard {
+        margin: -12% 0% 0% 80%;
+        height: 300px;
+        width: 300px;
+        z-index: 1;
+    }
+
+    .messageBoard p {
+        font-size: 20px;
+        font-weight: bold;
+        background-color: black;
+        color: rgb(254, 9, 205);
+    }
+
+    .alertBox {
+        display: none;
+        margin: -30% 0% 0% 47%;
+        width: 400px;
+        height: 250px;
+        background: #061442;
+        text-align: center;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        transition: 0.2s;
+    }
+
+    .alertBox h1 {
+        padding-top: 50px;
+        color: green;
+    }
+
+    .alertBox h3 {
+        padding-top: 10px;
+        color: rgb(23, 0, 128);
+    }
+
+    .alertBox #Replay {
+        height: 60px;
+        width: 60px;
+        border-color: black;
+        border-radius: 50%;
+        background: url('../UI and Button Images/Replay.png');
+    }
+
+    .skip {
+        margin: 35% 0% 0% 75%;
+        height: 50px;
+        width: 150px;
+        border: none;
+        outline: none;
+        font-size: large;
+        color: #4e1ba5;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 12px;
+    }
+
+    .skip::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    .skip::before {
+        content: "";
+        background: linear-gradient(45deg, red, orange, yellow, green, #00ffd5, blue, pink, red, orange, yellow);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        z-index: -1;
+        background-size: 900%;
+        z-index: -1;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        filter: blur(2px);
+        animation: glowButton 10s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+        opacity: 1;
+    }
+
+    @keyframes glowButton {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .skip:hover::before {
+        opacity: 1;
+    }
+
+    .skip:active::after {
+        background: transparent
+    }
+
+    .skip:active {
+        font-weight: bold;
+    }
+
+    .skip:hover {
+        animation: bigFonts 2s 1 linear;
+        font-size: 130%;
+        color: #00ffd5;
+    }
+
+    @keyframes bigFonts {
+        0% {
+            font-size: 100%;
+            color: blue;
+        }
+
+        50% {
+            font-size: 125%;
+            color: green;
+        }
+
+        100% {
+            font-size: 130%;
+            color: #00ffd5;
+        }
+    }
+
+}
+
+
+
+@media screen and (min-width : 750px) and (max-width : 1000px) {
+    .Controller {
+        margin: -20% 0% 0% 105%;
+    }
+
+    .toolBox {
+        margin: -23% 0% 0% 10%;
+    }
+
+    .scoreBoard {
+        margin: -35% 0% 0% 100%;
+    }
+
+    .messageBoard {
+        margin: -55% 0% 0% 100%;
+    }
+
+    .alertBox {
+        margin: 0% 0% 0% 75%;
+    }
+
+}
+
+@media screen and (min-width : 550px) and (max-width : 750px) {
+    .Controller {
+        margin: -40% 0% 0% 120%;
+    }
+
+    .toolBox {
+        margin: -23% 0% 0% 10%;
+    }
+
+    .scoreBoard {
+        margin: -50% 0% 0% 120%;
+    }
+
+    .messageBoard {
+        margin: -55% 0% 0% 100%;
+    }
+
+    .alertBox {
+        margin: 0% 0% 0% 75%;
+    }
+
+}
+
+@media screen and (min-width : 350px) and (max-width : 550px) and (min-height : 250px) {
+    .Controller {
+        margin: -25% 0% 0% 150%;
+    }
+
+    .toolBox {
+        margin: -50% 0% 0% 25%;
+    }
+
+    .scoreBoard {
+        margin: -60% 0% 0% 150%;
+    }
+
+    .messageBoard {
+        margin: -60% 0% 0% 150%;
+    }
+
+    .alertBox {
+        margin: -50% 0% 0% 115%;
+    }
+
+}

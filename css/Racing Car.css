@@ -1,0 +1,269 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    align-items: center;
+    background: #27005D;
+}
+
+.ModePackage {
+
+    margin-top: -120px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 40%;
+    width: 75%;
+    background: #9400FF;
+    border-radius: 30px;
+}
+
+.ModeCard {
+    display: block;
+    margin: 10px;
+    height: 500px;
+    width: 300px;
+    background: #BC7AF9;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+#casual {
+    display: block;
+}
+
+#racing {
+    display: block;
+}
+
+#duration {
+    display: block;
+}
+
+#infinite {
+    display: block;
+}
+
+.heading {
+    display: none;
+    text-align: center;
+    color: #FAF3F0;
+}
+
+#head {
+    font-size: 50px;
+    color: #FEFFAC;
+}
+
+#casual:hover {
+    height: 550px;
+    width: 660px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#racing:hover {
+    height: 550px;
+    width: 660px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#duration:hover {
+    height: 550px;
+    width: 660px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#infinite:hover {
+    height: 550px;
+    width: 660px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.ModeCard p {
+    padding: 25px 26px;
+    color: #FFCACC;
+    font-size: 20px;
+}
+
+.ModeCard {
+    overflow: clip;
+}
+
+.DivForSelector {
+
+    margin-top: -60px;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 90%;
+    width: 70%;
+    background: #9400FF;
+    border-radius: 2%;
+    overflow: hidden;
+
+}
+
+.DivForCars {
+
+    display: flex;
+    float: left;
+    margin: 5px;
+    height: 180px;
+    flex-direction: row-reverse;
+    width: 195px;
+    background: #BC7AF9;
+    transition: 0.5s;
+    border: 2px solid black;
+    /* border-color: linear-gradient(blue,red,green); */
+    border-radius: 5%;
+
+}
+
+.addBorder {
+    border: 2px solid black;
+}
+
+.DivForHeading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.DivForHeading h2 {
+    color: rgb(255, 159, 80);
+}
+
+button {
+    margin: 1.5% 0px 0px 33%;
+    height: 30px;
+    width: 70px;
+    background: purple;
+    border-radius: 10%;
+}
+
+#firstImage {
+    background: url('../Final Cars/0.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#secondImage {
+    background: url('../Final Cars/1.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#thirdImage {
+    background: url('../Final Cars/3.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#fourthImage {
+    background: url('../Final Cars/4.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#fifthImage {
+    background: url('../Final Cars/5.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#sixthImage {
+    background: url('../Final Cars/6.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#seventhImage {
+    background: url('../Final Cars/7.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#eigthImage {
+    background: url('../Final Cars/8.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#ninthImage {
+    background: url('../Final Cars/9.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#tenthImage {
+    background: url('../Final Cars/10.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#eleventhImage {
+    background: url('../Final Cars/11.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#twelvethImage {
+    background: url('../Final Cars/12.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#thirteenthImage {
+    background: url('../Final Cars/13.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#fourteenthImage {
+    background: url('../Final Cars/14.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#fifteenthImage {
+    background: url('../Final Cars/15.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#fifteenthImage h3 {
+    padding-right: 5px;
+    font-size: medium;
+    color: white;
+}
+
+#back {
+    margin: 10px 90% 0px 0px;
+    height: 55px;
+    width: 55px;
+    background: url('../UI and Button Images/Back.png');
+}
+
+#choose {
+    margin: 1% 0% 1% 45%;
+    text-align: center;
+}
+
+@media screen and (max-width : 1100px) {
+
+    .ModeCard {
+        height: 50%;
+    }
+
+    .ModePackage {
+        flex-wrap: wrap;
+    }
+}
