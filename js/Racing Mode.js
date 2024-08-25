@@ -1230,20 +1230,26 @@ function stopVideo() {
     makeCountDown();
 }
 
+
 var aboutVideo = document.getElementById('racingModeVideo');
-aboutVideo.onended =
-    function stopVideo() {
-        aboutVideo.pause();
-        document.getElementById("racingModeVideo").style.display = "none";
-        document.querySelector(".skip").style.display = "none";
-        document.getElementById("myCanvas").style.display = "block";
-        document.querySelector(".Controller").style.display = "block";
-        document.querySelector(".RightLeft").style.display = "block";
-        document.querySelector(".UpDown").style.display = "block";
-        document.querySelector(".toolBox").style.display = "block";
-        document.querySelector(".pedals").style.display = "block";
-        document.querySelector(".menuBar").style.display = "block";
-        document.querySelector(".scoreBoard").style.display = "block";
-        document.querySelector(".messageBoard").style.display = "block";
-        makeCountDown();
-    }
+aboutVideo.onended = function () {
+    aboutVideo.pause();
+    document.getElementById("racingModeVideo").style.display = "none";
+    document.querySelector(".skip").style.display = "none";
+    document.getElementById("myCanvas").style.display = "block";
+    document.querySelector(".Controller").style.display = "block";
+    document.querySelector(".RightLeft").style.display = "block";
+    document.querySelector(".UpDown").style.display = "block";
+    document.querySelector(".toolBox").style.display = "block";
+    document.querySelector(".pedals").style.display = "block";
+    document.querySelector(".menuBar").style.display = "block";
+    document.querySelector(".scoreBoard").style.display = "block";
+    document.querySelector(".messageBoard").style.display = "block";
+    makeCountDown();
+}
+
+if (parseInt(sessionStorage.racingModeVideoStatus) != 1) {
+    sessionStorage.racingModeVideoStatus = 1;
+} else {
+    stopVideo();
+}

@@ -1149,3 +1149,9 @@ aboutVideo.onended =
         document.querySelector(".messageBoard").style.display = "block";
         makeCountDown();
     }
+
+if (parseInt(sessionStorage.durationModeVideoStatus) != 1) {
+    sessionStorage.durationModeVideoStatus = 1;
+} else {
+    stopVideo();
+}

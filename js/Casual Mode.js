@@ -959,20 +959,42 @@ function stopVideo() {
     makeCountDown();
 }
 
+
 var aboutVideo = document.getElementById('casualModeVideo');
-aboutVideo.onended =
-    function stopVideo() {
-        aboutVideo.pause();
-        document.getElementById("casualModeVideo").style.display = "none";
-        document.querySelector(".skip").style.display = "none";
-        document.getElementById("myCanvas").style.display = "block";
-        document.querySelector(".Controller").style.display = "block";
-        document.querySelector(".RightLeft").style.display = "block";
-        document.querySelector(".UpDown").style.display = "block";
-        document.querySelector(".toolBox").style.display = "block";
-        document.querySelector(".pedals").style.display = "block";
-        document.querySelector(".menuBar").style.display = "block";
-        document.querySelector(".scoreBoard").style.display = "block";
-        document.querySelector(".messageBoard").style.display = "block";
-        makeCountDown();
-    }
+aboutVideo.onended = function () {
+    aboutVideo.pause();
+    document.getElementById("casualModeVideo").style.display = "none";
+    document.querySelector(".skip").style.display = "none";
+    document.getElementById("myCanvas").style.display = "block";
+    document.querySelector(".Controller").style.display = "block";
+    document.querySelector(".RightLeft").style.display = "block";
+    document.querySelector(".UpDown").style.display = "block";
+    document.querySelector(".toolBox").style.display = "block";
+    document.querySelector(".pedals").style.display = "block";
+    document.querySelector(".menuBar").style.display = "block";
+    document.querySelector(".scoreBoard").style.display = "block";
+    document.querySelector(".messageBoard").style.display = "block";
+    makeCountDown();
+}
+
+if (parseInt(sessionStorage.casualModeVideoStatus) != 1) {
+    sessionStorage.casualModeVideoStatus = 1;
+} else {
+    stopVideo();
+}
+
+/* function skipVideo() {
+    aboutVideo.pause();
+    document.getElementById("casualModeVideo").style.display = "none";
+    document.querySelector(".skip").style.display = "none";
+    document.getElementById("myCanvas").style.display = "block";
+    document.querySelector(".Controller").style.display = "block";
+    document.querySelector(".RightLeft").style.display = "block";
+    document.querySelector(".UpDown").style.display = "block";
+    document.querySelector(".toolBox").style.display = "block";
+    document.querySelector(".pedals").style.display = "block";
+    document.querySelector(".menuBar").style.display = "block";
+    document.querySelector(".scoreBoard").style.display = "block";
+    document.querySelector(".messageBoard").style.display = "block";
+    makeCountDown();
+}   */
