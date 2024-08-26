@@ -152,13 +152,13 @@ function setImagesxAudio() {
     audios[5].src = './Sounds/Complete1.wav';
     audios[6].src = './Sounds/Complete2.wav';
     audios[7].src = './Sounds/CountDown1.m4a';
-    audios[8].src = './Sounds/FinalCountDown.mp3';
+    audios[8].src = './Sounds/FinalCountdown.mp3';
     audios[9].src = './Sounds/Gameover1.mp3';
     audios[10].src = './Sounds/Gameover2.mp3';
     audios[11].src = './Sounds/GameStart.mp3';
     audios[12].src = './Sounds/Nitro.wav';
     audios[13].src = './Sounds/nitro1.wav';
-    audios[14].src = './Sounds/nitro2.wav';
+    audios[14].src = './Sounds/Nitro2.wav';
     audios[15].src = './Sounds/NitroRecharge1.wav';
     audios[16].src = './Sounds/NitroRecharge2.wav';
     audios[17].src = './Sounds/Overtake.mp3';
