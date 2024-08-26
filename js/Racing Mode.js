@@ -155,7 +155,7 @@ function setImagesxAudio() {
     audios[5].src = './Sounds/Complete1.wav';
     audios[6].src = './Sounds/Complete2.wav';
     audios[7].src = './Sounds/CountDown1.m4a';
-    audios[8].src = './Sounds/FinalCountDdown.mp3';
+    audios[8].src = './Sounds/FinalCountdown.mp3';
     audios[9].src = './Sounds/Gameover1.mp3';
     audios[10].src = './Sounds/Gameover2.mp3';
     audios[11].src = './Sounds/GameStart.mp3';
