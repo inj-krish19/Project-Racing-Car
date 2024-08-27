@@ -818,6 +818,14 @@ function animate() {
 
     let index = 0;
 
+    for (index = 0; index < footPath.length; index++) {
+        footPath[index].position.y += speed;
+    }
+
+    for (index = 0; index < footPath.length; index++) {
+        footPath[index].draw();
+    }
+
     for (index = 0; index < timeBlocks.length; index++) {
         timeBlocks[index].position.y += speed;
     }
@@ -853,14 +861,6 @@ function animate() {
                 audios[6].play();
             }
         }
-    }
-
-    for (index = 0; index < footPath.length; index++) {
-        footPath[index].position.y += speed;
-    }
-
-    for (index = 0; index < footPath.length; index++) {
-        footPath[index].draw();
     }
 
     for (index = 1; index < car.length; index++) {
@@ -912,6 +912,7 @@ function animate() {
         speed += 10;
         limit += 20000;
     }
+
 }
 
 function DurationHandler() {
