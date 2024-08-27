@@ -818,6 +818,8 @@ function animate() {
 
     let index = 0;
 
+    // first runs foothpath 
+
     for (index = 0; index < footPath.length; index++) {
         footPath[index].position.y += speed;
     }
@@ -825,6 +827,8 @@ function animate() {
     for (index = 0; index < footPath.length; index++) {
         footPath[index].draw();
     }
+
+    //then runs timer increaser blocks
 
     for (index = 0; index < timeBlocks.length; index++) {
         timeBlocks[index].position.y += speed;
