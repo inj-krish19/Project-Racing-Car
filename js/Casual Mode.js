@@ -11,8 +11,8 @@ Till Learning Resize orr For Static Purpose Both Are 200
 And Dynamicity Will Be Applied After Learning 
 Event Listner Of Body And Windows        */
 
-height = canvas.height = innerHeight - 5;
-width = canvas.width = innerWidth - 0;
+height = canvas.height = Math.max(750, innerHeight) * 0.99;
+width = canvas.width = Math.max(1400, innerWidth);
 
 var start, end, dist, track_len, med = [], common;
 
@@ -372,7 +372,7 @@ function retrack() {
         val_y = RestoRe;
         for (j = 0; j < lj; j++) {
             footPath.push(new FootPath(val_x, val_y));
-            console.log(footPath[footPath.length - 1].position.y);
+            // console.log(footPath[footPath.length - 1].position.y);
             footPath[(4 * limit_j) + ((lj * i) + j)].draw();
             val_y -= distance;
         }
