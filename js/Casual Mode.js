@@ -907,6 +907,7 @@ var interval = 0;
 
 addEventListener("keydown", (event) => {
 
+    event.preventDefault();
     if (event.keyCode !== 32) {
         key = event.keyCode;
     }
