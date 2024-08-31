@@ -4,6 +4,7 @@
     }
 
     #myCanvas {
+        object-fit: cover;
         display: none;
     }
 
@@ -96,6 +97,7 @@
     }
 
     #myCanvas {
+        object-fit: cover;
         z-index: -1;
     }
 

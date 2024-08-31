@@ -12,10 +12,8 @@ Till Learning Resize orr For Static Purpose Both Are 200
 And Dynamicity Will Be Applied After Learning 
 Event Listner Of Body And Windows        */
 
-
-
-height = canvas.height = innerHeight - 5;
-width = canvas.width = innerWidth - 0;
+height = canvas.height = Math.max(750, innerHeight) * 0.99;
+width = canvas.width = Math.max(1400, innerWidth);
 
 var start, end, dist, track_len, med = [], common;
 
@@ -1178,6 +1176,7 @@ var interval = 0;
 
 addEventListener("keydown", (event) => {
 
+    event.preventDefault();
     if (event.keyCode !== 32) {
         key = event.keyCode;
     }
