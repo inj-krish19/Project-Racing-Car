@@ -956,13 +956,12 @@ function stopVideo() {
     document.querySelector(".pedals").style.display = "block";
     document.querySelector(".menuBar").style.display = "block";
     document.querySelector(".scoreBoard").style.display = "block";
-    document.querySelector(".messageBoard").style.display = "block";
     makeCountDown();
 }
 
 
 var aboutVideo = document.getElementById('casualModeVideo');
-aboutVideo.onended = function () {
+aboutVideo.onended = () => { stopVideo(); }/* function () {
     aboutVideo.pause();
     document.getElementById("casualModeVideo").style.display = "none";
     document.querySelector(".skip").style.display = "none";
@@ -976,7 +975,7 @@ aboutVideo.onended = function () {
     document.querySelector(".scoreBoard").style.display = "block";
     document.querySelector(".messageBoard").style.display = "block";
     makeCountDown();
-}
+} */
 
 if (parseInt(sessionStorage.casualModeVideoStatus) != 1) {
     sessionStorage.casualModeVideoStatus = 1;

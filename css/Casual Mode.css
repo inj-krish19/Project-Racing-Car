@@ -342,7 +342,7 @@
 
 }
 
-@media screen and (min-width : 750px) and (max-width : 1000px) {
+/*@media screen and (min-width : 750px) and (max-width : 1000px) {
     .Controller {
         margin: -20% 0% 0% 105%;
     }
@@ -386,27 +386,27 @@
         margin: 0% 0% 0% 75%;
     }
 
-}
+}*/
 
-@media screen and (min-width : 350px) and (max-width : 550px) and (min-height : 250px) {
+@media screen and (min-width : 350px) and (max-width : 1000px) and (min-height : 250px) {
     .Controller {
-        margin: -25% 0% 0% 150%;
+        margin: -300px 0 0 1100px;
+    }
+
+    .menuBar {
+        margin: -550px 0 0 50px;
     }
 
     .toolBox {
-        margin: -50% 0% 0% 25%;
+        margin: -200px 0 0 100px;
     }
 
     .scoreBoard {
-        margin: -60% 0% 0% 150%;
-    }
-
-    .messageBoard {
-        margin: -60% 0% 0% 150%;
+        margin: 0px 0 0 1100px;
     }
 
     .alertBox {
-        margin: -50% 0% 0% 115%;
+        margin: -450px 0 0 700px;
     }
 
 }
