@@ -110,7 +110,7 @@
     }
 
     .Controller {
-        margin: -20% 0% 0% 83%;
+        margin: -250px 0 0 1100px;
         height: 200px;
         width: 200px;
         z-index: 1;
@@ -145,7 +145,7 @@
     }
 
     .toolBox {
-        margin: -13% 0% 0% 3.5%;
+        margin: -200px 0 0 75px;
     }
 
     .toolBox .pedals button {
@@ -165,7 +165,7 @@
     }
 
     .menuBar {
-        margin: -37% 0% 0% 0.75%;
+        margin: -600px 0 0 50px;
         padding: 5px;
         height: 180px;
         width: 180px;
@@ -191,7 +191,7 @@
     }
 
     .scoreBoard {
-        margin: -8% 0% 0% 80%;
+        margin: -150px 0 0 1100px;
         height: 300px;
         width: 300px;
         z-index: 1;
@@ -219,7 +219,7 @@
 
     .alertBox {
         display: none;
-        margin: -30% 0% 0% 47%;
+        margin: -300px 0 0 700px;
         width: 400px;
         height: 250px;
         background: #061442;
@@ -402,7 +402,7 @@
     }
 
     .scoreBoard {
-        margin: 0px 0 0 1100px;
+        margin: 0 0 0 1100px;
     }
 
     .alertBox {
