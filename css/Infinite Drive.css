@@ -279,7 +279,6 @@
         position: absolute;
         top: -2px;
         left: -2px;
-        z-index: -1;
         background-size: 900%;
         z-index: -1;
         width: calc(100% + 4px);
