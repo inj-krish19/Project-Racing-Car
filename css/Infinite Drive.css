@@ -343,7 +343,7 @@
 
 
 
-@media screen and (min-width : 750px) and (max-width : 1000px) {
+/*@media screen and (min-width : 750px) and (max-width : 1000px) {
     .Controller {
         margin: -20% 0% 0% 105%;
     }
@@ -408,6 +408,34 @@
 
     .alertBox {
         margin: -50% 0% 0% 115%;
+    }
+
+} */
+
+@media screen and (min-width : 350px) and (max-width : 1000px) and (min-height : 250px) {
+
+    .menuBar {
+        margin: -550px 0 0 50px;
+    }
+
+    .Controller {
+        margin: -300px 0 0 1100px;
+    }
+
+    .toolBox {
+        margin: -200px 0 0 100px;
+    }
+
+    .scoreBoard {
+        margin: 0 0 0 1100px;
+    }
+
+    .messageBoard {
+        margin: -425px 0 0 1100px;
+    }
+
+    .alertBox {
+        margin: -350px 0 0 700px;
     }
 
 }
