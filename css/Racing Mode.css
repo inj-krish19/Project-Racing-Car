@@ -341,7 +341,60 @@
 
 }
 
+@media screen and (min-width : 350px) and (max-width : 1000px) and (min-height : 250px) {
 
+    .menuBar {
+        margin: -550px 0 0 50px;
+    }
+
+    .Controller {
+        margin: -300px 0 0 1100px;
+    }
+
+    .toolBox {
+        margin: -200px 0 0 100px;
+    }
+
+    .scoreBoard {
+        margin: 0 0 0 1100px;
+    }
+
+    .messageBoard {
+        margin: -425px 0 0 1100px;
+    }
+
+    .alertBox {
+        margin: -350px 0 0 700px;
+    }
+
+}
+
+@media screen and (min-width : 1001px) and (max-width : 4320px) {
+    .Controller {
+        margin: -300px 0 0 1100px;
+    }
+
+    .menuBar {
+        margin: -550px 0 0 50px;
+    }
+
+    .toolBox {
+        margin: -200px 0 0 100px;
+    }
+
+    .scoreBoard {
+        margin: 0 0 0 1100px;
+    }
+
+    .messageBoard {
+        margin: -425px 0 0 1100px;
+    }
+
+    .alertBox {
+        margin: -615px 0 0 700px;
+    }
+
+}
 
 /*@media screen and (min-width : 750px) and (max-width : 1000px) {
     .Controller {
@@ -388,31 +441,3 @@
     }
 
 }*/
-
-@media screen and (min-width : 350px) and (max-width : 1000px) and (min-height : 250px) {
-
-    .menuBar {
-        margin: -550px 0 0 50px;
-    }
-
-    .Controller {
-        margin: -300px 0 0 1100px;
-    }
-
-    .toolBox {
-        margin: -200px 0 0 100px;
-    }
-
-    .scoreBoard {
-        margin: 0 0 0 1100px;
-    }
-
-    .messageBoard {
-        margin: -425px 0 0 1100px;
-    }
-
-    .alertBox {
-        margin: -350px 0 0 700px;
-    }
-
-}
