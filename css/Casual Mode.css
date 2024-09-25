@@ -110,7 +110,7 @@
     }
 
     .Controller {
-        margin: -20% 0% 0% 83%;
+        margin: -250px 0 0 1100px;
         height: 200px;
         width: 200px;
         z-index: 1;
@@ -145,7 +145,7 @@
     }
 
     .toolBox {
-        margin: -13% 0% 0% 3.5%;
+        margin: -200px 0 0 75px;
     }
 
     .toolBox .pedals button {
@@ -165,7 +165,7 @@
     }
 
     .menuBar {
-        margin: -37% 0% 0% 0.75%;
+        margin: -600px 0 0 50px;
         padding: 5px;
         height: 180px;
         width: 180px;
@@ -191,7 +191,7 @@
     }
 
     .scoreBoard {
-        margin: -8% 0% 0% 80%;
+        margin: -150px 0 0 1100px;
         height: 300px;
         width: 300px;
         z-index: 1;
@@ -219,7 +219,7 @@
 
     .alertBox {
         display: none;
-        margin: -30% 0% 0% 47%;
+        margin: -300px 0 0 700px;
         width: 400px;
         height: 250px;
         background: #061442;
@@ -279,7 +279,6 @@
         position: absolute;
         top: -2px;
         left: -2px;
-        z-index: -1;
         background-size: 900%;
         z-index: -1;
         width: calc(100% + 4px);
@@ -342,7 +341,55 @@
 
 }
 
-@media screen and (min-width : 750px) and (max-width : 1000px) {
+
+@media screen and (min-width : 350px) and (max-width : 1000px) and (min-height : 250px) {
+    .Controller {
+        margin: -300px 0 0 1100px;
+    }
+
+    .menuBar {
+        margin: -550px 0 0 50px;
+    }
+
+    .toolBox {
+        margin: -200px 0 0 100px;
+    }
+
+    .scoreBoard {
+        margin: 0 0 0 1100px;
+    }
+
+    .alertBox {
+        margin: -450px 0 0 700px;
+    }
+
+}
+
+@media screen and (min-width : 1001px) and (max-width : 4320px) {
+    .Controller {
+        margin: -300px 0 0 1100px;
+    }
+
+    .menuBar {
+        margin: -550px 0 0 50px;
+    }
+
+    .toolBox {
+        margin: -200px 0 0 100px;
+    }
+
+    .scoreBoard {
+        margin: 0 0 0 1100px;
+    }
+
+    .alertBox {
+        margin: -615px 0 0 700px;
+    }
+
+}
+
+
+/*@media screen and (min-width : 750px) and (max-width : 1000px) {
     .Controller {
         margin: -20% 0% 0% 105%;
     }
@@ -386,27 +433,4 @@
         margin: 0% 0% 0% 75%;
     }
 
-}
-
-@media screen and (min-width : 350px) and (max-width : 550px) and (min-height : 250px) {
-    .Controller {
-        margin: -25% 0% 0% 150%;
-    }
-
-    .toolBox {
-        margin: -50% 0% 0% 25%;
-    }
-
-    .scoreBoard {
-        margin: -60% 0% 0% 150%;
-    }
-
-    .messageBoard {
-        margin: -60% 0% 0% 150%;
-    }
-
-    .alertBox {
-        margin: -50% 0% 0% 115%;
-    }
-
-}
+}*/
