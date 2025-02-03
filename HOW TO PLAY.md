@@ -1,80 +1,74 @@
-This Is Racing Car game by author INJ KRISH. 
+# Racing Car Game  
 
-This Game was made in six month for education and learning purpose. 
+![Car Racing](Mode%20Images/Car%20Racing.png)  
 
-This Game is also user friendly and liked by users. 
+**Author:** INJ KRISH  
 
-Anyone Can Access This Game and also can share, modify, clone etc... 
+This game was made in six months for education and learning purposes. It is user-friendly and has been well received by players.  
 
+Anyone can access, share, modify, or clone this game freely.  
 
----------------------
-About Mode : 
----------------------
+---
 
-Casual Mode    : It Is Practice Mode For Practicing Game 
-                 For Training Of This Game
-                 
-Racing Mode    : It Gives Feeling Of Playing in F1 Racing Car Match
-                 Can Expireince F1 Racing Car in virtual Space
-                 
-Duration Mode  : Here We have to collect Increaser Blocks That Increase Our Duration and 
-                 Try To Achieve Best Score 
-                 
-Infinite Drive : For Relaxing and Playing Game at a time and 
-                 Also Playing As Long Drive ( It Does not Have End ) 
+## 🚗 About Game Modes  
 
---------------
-HOW TO PLAY :
----------------
+### 🏁 Casual Mode  
+![Casual Mode](Mode%20Images/Casual%20Mode.png)  
+- Practice mode for training and improving gameplay skills.  
 
-'N' Key For Nitro : For Speed Boost
+### 🏎️ Racing Mode  
+![Racing Mode](Mode%20Images/Racing%20Mode.png)  
+- Provides an F1 racing car experience in a virtual environment.  
 
-' ' Key For Redoing Previous Move One More Time
+### ⏳ Duration Mode  
+![Duration Mode](Mode%20Images/Duration%20Mode.png)  
+- Collect increaser blocks to extend game duration and achieve the best score.  
 
+### 🔁 Infinite Drive  
+![Infinite Drive](Mode%20Images/Infinite%20Mode.png)  
+- A relaxing mode for long drives without an end.  
 
-At Top Left Side there are three buttons that are 
+---
 
+## 🎮 How to Play  
 
-First  : Back           : For Be Redirected to Selecting Car Models(Skin) and Modes
+- Press **`N`** for Nitro (Speed Boost).  
+- Press **`Space`** to redo the previous move.  
 
-Second : Play / Pause   : For Pause or Play Game as per Last Move
+### 🔹 Top Left Buttons  
+![Back](UI%20and%20Button%20Images/Back.png) 
+![Play](UI%20and%20Button%20Images/play.png)
+![Pause](UI%20and%20Button%20Images/pause.png)
+![Music On](UI%20and%20Button%20Images/MUSICON.png)
+![Music Off](UI%20and%20Button%20Images/MUSICOFF.png)
+- **Back:** Redirects to car model and mode selection.  
+- **Play / Pause:** Pause or resume the game from the last move.  
+- **Music On / Off:** Toggle background music.  
 
-Third  : Music On / Off : For Handling Music Of Game
+### 🔹 Bottom Left Buttons  
+![Accelerator](UI%20and%20Button%20Images/accelerator.png)
+![Brake](UI%20and%20Button%20Images/brake.png)
+- **Accelerator:** Increase car speed. 
+- **Brake:** Prevent car blast for 1 second.  
 
+### 🔹 Top Right Scores  
+- **Score:** Displays the current score.  
+- **Session's Best Score:** Highest score achieved in the session.  
+- **All-Time Best Score:** Best score ever achieved.  
 
-At Bottom Left Side there are two buttons that are 
+### 🔹 Duration Mode Only  
+- Includes a time stamp and a blinking message indicating gameplay updates.  
 
-First  : Accecelerator : For Increasing Speed Of Car
+### 🔹 Right Bottom Buttons  
+![Left](UI%20and%20Button%20Images/Left.png)
+![Right](UI%20and%20Button%20Images/Right.png)
+![Up](UI%20and%20Button%20Images/Up.png)
+![Down](UI%20and%20Button%20Images/Down.png)
+- **Left:** Change lane to the left.  
+- **Right:** Change lane to the right.  
+- **Up:** Move up on the track with a slight speed boost.  
+- **Down:** Move down on the track with a slight speed decrease.  
 
-Second : Brake         : For Avoiding Car Blast For 1 second
+---
 
-
-At Top Right Side there are three score that are 
-
-First  : Score                 : It shows Current Score Of The Game 
-
-Second : Sessions' Best Score  : It Shows Best Score Of This Session
-
-Third  : All Time Best Score   : It Shows Best Score Of All Time 
-
-
-********** For Duration Mode Only ********** 
-
-
-Fourth : Time Stamp and Time Message Is there 
-
-=> At Middle Right Side there is Message That Is Blinking and giving Message About your Gameplay
-
-At Right Bottom Side four Buttons are there that are 
-
-
-First   : Left  : For Changing Lane To Left Side  
-
-Second  : Right : For Changing Lane To Right Side
-
-Third   : Up    : For Going Up On Track and little Speed Boost
-
-Fourth  : Down  : For Going Down On Track and little Speed Decreases
-
-
-Thanks For Accessing It
+### 🎉 Thank you for playing and exploring this game!
