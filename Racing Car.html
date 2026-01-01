@@ -2,109 +2,275 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Racing</title>
-    <link rel="shortcut icon" href="./Mode Images/Racing Car.webp" type="x-icon/image">
-    <link rel="stylesheet" href="css/Racing Car.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Thunder | Car Racing Game</title>
+
+    <link rel="icon" href="./Mode Images/Racing Car.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="min-h-screen bg-gradient-to-br from-sky-600 via-blue-700 to-indigo-900 text-white overflow-x-hidden">
 
-    <button id="back" onclick="location.href = './index.html'"></button>
+    <!-- BACK BUTTON -->
+    <button onclick="location.href='./index.html'" class="fixed top-5 left-5 z-50 flex items-center justify-center h-12 w-12 rounded-full
+               bg-gradient-to-tr from-purple-500 via-pink-500 to-indigo-600
+               hover:scale-110 transition-transform shadow-lg">
+        <!-- Arrow SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+    </button>
 
-    <div class="DivForSelector" id="DivForSelector">
 
-        <div class="DivForHeading">
-            <h2 id="DivForHeading">Pick A Car</h2>
-        </div>
-
-        <div class="DivForCars" id="firstImage" onclick=callValue(0)></div>
-        <div class="DivForCars" id="secondImage" onclick=callValue(1)></div>
-        <div class="DivForCars" id="thirdImage" onclick=callValue(3)></div>
-        <div class="DivForCars" id="fourthImage" onclick=callValue(4)></div>
-        <div class="DivForCars" id="fifthImage" onclick=callValue(5)></div>
-        <div class="DivForCars" id="sixthImage" onclick=callValue(6)></div>
-        <div class="DivForCars" id="seventhImage" onclick=callValue(7)></div>
-        <div class="DivForCars" id="eigthImage" onclick=callValue(8)></div>
-        <div class="DivForCars" id="ninthImage" onclick=callValue(9)></div>
-        <div class="DivForCars" id="tenthImage" onclick=callValue(10)></div>
-        <div class="DivForCars" id="eleventhImage" onclick=callValue(11)></div>
-        <div class="DivForCars" id="twelvethImage" onclick=callValue(12)></div>
-        <div class="DivForCars" id="thirteenthImage" onclick=callValue(13)></div>
-        <div class="DivForCars" id="fourteenthImage" onclick=callValue(14)></div>
-        <div class="DivForCars" id="fifteenthImage" onclick=callValue(15)>
-            <h3>Default</h3>
-        </div>
-
-        <button id="choose">Choose</button>
-
+    <!-- TOAST -->
+    <div id="toast" class="pointer-events-none fixed top-6 left-1/2 z-50 hidden -translate-x-1/2 rounded-xl
+        bg-gradient-to-r from-sky-400 to-purple-500 px-6 py-3 text-sm font-semibold shadow-xl">
     </div>
 
-    <h1 class="heading" id="head">
-        Modes
-    </h1>
+    <!-- ================= STEP A : CAR SELECTION ================= -->
+    <section id="stepCar" class="relative flex min-h-screen flex-col items-center justify-center gap-6 px-6 py-4">
 
-    <div class="ModePackage">
+        <h1 class="text-4xl font-bold tracking-wide">Choose Your F1 Machine</h1>
 
-        <div class="ModeCard" id="casual" onclick='location.href="./Casual Mode.html"'>
-            <h1 class="heading">
-                Casual <br> Mode
-            </h1>
+        <p class="text-sm text-sky-200">
+            Select a car to continue. Night Blade will be used if no selection is made.
+        </p>
 
-            <p class="content">
-                Casual Mode Is a Mode That Is Created For Knowing The Game Sense . In Casual Mode
-                Player Should Try To Practice and Give Best Of The Knock to Win Racing Mode.
-                Player Also Try Here To Beat Their Own Best Score.
-                One Of The Simplest Mode and Preferable by Childs.
-            </p>
-
+        <!-- CAR GRID -->
+        <div class="grid w-full max-w-6xl grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        
+            <!-- CAR 1 -->
+            <div onclick="selectCar(0)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/0.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Storm Rider</h3>
+                <p class="text-xs text-center text-gray-300">Balanced • Stable</p>
+            </div>
+        
+            <!-- CAR 2 -->
+            <div onclick="selectCar(1)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/1.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Velocity X</h3>
+                <p class="text-xs text-center text-gray-300">High Speed</p>
+            </div>
+        
+            <!-- CAR 3 -->
+            <div onclick="selectCar(2)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/2.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Turbo Hawk</h3>
+                <p class="text-xs text-center text-gray-300">Quick Acceleration</p>
+            </div>
+        
+            <!-- CAR 4 -->
+            <div onclick="selectCar(3)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/3.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Phantom GT</h3>
+                <p class="text-xs text-center text-gray-300">Sharp Handling</p>
+            </div>
+        
+            <!-- CAR 5 -->
+            <div onclick="selectCar(4)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/4.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Crimson Bolt</h3>
+                <p class="text-xs text-center text-gray-300">Top Speed</p>
+            </div>
+        
+            <!-- CAR 6 -->
+            <div onclick="selectCar(5)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/5.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Iron Drift</h3>
+                <p class="text-xs text-center text-gray-300">Corner Control</p>
+            </div>
+        
+            <!-- CAR 7 -->
+            <div onclick="selectCar(6)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/7.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Sky Racer</h3>
+                <p class="text-xs text-center text-gray-300">Lightweight</p>
+            </div>
+        
+            <!-- CAR 8 -->
+            <div onclick="selectCar(7)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/8.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Rapid Fang</h3>
+                <p class="text-xs text-center text-gray-300">Fast Boost</p>
+            </div>
+        
+            <!-- CAR 9 -->
+            <div onclick="selectCar(8)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/9.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Blue Comet</h3>
+                <p class="text-xs text-center text-gray-300">Stability</p>
+            </div>
+        
+            <!-- CAR 10 -->
+            <div onclick="selectCar(9)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/10.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Vortex Pro</h3>
+                <p class="text-xs text-center text-gray-300">Pro Handling</p>
+            </div>
+        
+            <!-- CAR 11 -->
+            <div onclick="selectCar(10)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/11.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Shadow FX</h3>
+                <p class="text-xs text-center text-gray-300">Control</p>
+            </div>
+        
+            <!-- CAR 12 -->
+            <div onclick="selectCar(11)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/12.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Neon Strike</h3>
+                <p class="text-xs text-center text-gray-300">Boost Focus</p>
+            </div>
+        
+            <!-- CAR 13 -->
+            <div onclick="selectCar(12)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/13.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Hyper Nova</h3>
+                <p class="text-xs text-center text-gray-300">Extreme Speed</p>
+            </div>
+        
+            <!-- CAR 14 -->
+            <div onclick="selectCar(13)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition hover:scale-105">
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/14.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Steel Viper</h3>
+                <p class="text-xs text-center text-gray-300">Grip Master</p>
+            </div>
+        
+            <!-- CAR 15 : DEFAULT CAR -->
+            <div onclick="selectCar(14)"
+                class="car-card cursor-pointer rounded-xl border border-white/20 bg-white/10 p-3 transition " > 
+                <div class="h-36 sm:h-40 bg-center bg-contain bg-no-repeat" style="background-image:url('./Final Cars/15.png')">
+                </div>
+                <h3 class="mt-2 text-center font-semibold">Night Blade</h3>
+                <p class="text-xs text-center text-gray-300">Consistency</p>
+            </div>
+        
         </div>
 
-        <div class="ModeCard" id="racing" onclick='location.href="./Racing Mode.html"'>
-            <h1 class="heading">
-                Racing <br> Mode
-            </h1>
 
-            <p class="content">
-                Racing Mode Is a Main Mode and Attraction Of The Game . Here Player Should Try To Beat
-                Other Cars And Try To Be #1 in that F1 Racing Track . Here All Things Are Setted as F1
-                Racing Car and Regulations. Player Like This Mode Because Its Looking Professional Racing Track.
-            </p>
+
+        <button onclick="goToModes()"
+            class="mt-8 rounded-xl bg-sky-500 px-10 py-3 text-lg font-bold transition hover:bg-sky-600">
+            Choose & Continue
+        </button>
+    </section>
+
+    <!-- ================= STEP B : MODE SELECTION ================= -->
+    <section id="stepMode"
+        class="hidden min-h-screen bg-gradient-to-br from-purple-700 via-fuchsia-700 to-indigo-900 px-6 py-24">
+
+        <h1 class="mb-10 text-center text-4xl font-bold">Select Game Mode</h1>
+
+        <div class="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+
+            <div onclick="location.href='./Casual Mode.html'" class="mode-card relative min-h-[340px] cursor-pointer rounded-2xl bg-white/10 p-6 transition-all duration-300 hover:scale-105 hover:z-10 overflow-hidden">
+                <h2 class="text-xl font-bold">Casual Mode</h2>
+                <p class="mt-2 text-sm text-gray-200">
+                    Casual Mode helps players understand gameplay mechanics, controls,
+                    and movement. This mode is perfect for beginners and relaxed sessions
+                    where players focus on learning and improving personal scores.
+                </p>
+            </div>
+
+            <div onclick="location.href='./Racing Mode.html'" class="mode-card relative min-h-[340px] cursor-pointer rounded-2xl bg-white/10 p-6 transition-all duration-300 hover:scale-105 hover:z-10 overflow-hidden">
+                <h2 class="text-xl font-bold">Racing Mode</h2>
+                <p class="mt-2 text-sm text-gray-200">
+                    Racing Mode delivers a competitive F1-style experience where players
+                    race against AI opponents. Precision, overtaking strategy, and speed
+                    control are essential to secure victory.
+                </p>
+            </div>
+
+            <div onclick="location.href='./Duration Mode.html'" class="mode-card relative min-h-[340px] cursor-pointer rounded-2xl bg-white/10 p-6 transition-all duration-300 hover:scale-105 hover:z-10 overflow-hidden">
+                <h2 class="text-xl font-bold">Duration Mode</h2>
+                <p class="mt-2 text-sm text-gray-200">
+                    Duration Mode challenges players to score maximum points within a
+                    limited time. Collect time-extension blocks wisely to prolong gameplay
+                    and maximize scoring opportunities.
+                </p>
+            </div>
+
+            <div onclick="location.href='./Infinite Drive.html'" class="mode-card relative min-h-[340px] cursor-pointer rounded-2xl bg-white/10 p-6 transition-all duration-300 hover:scale-105 hover:z-10 overflow-hidden">
+                <h2 class="text-xl font-bold">Infinite Drive</h2>
+                <p class="mt-2 text-sm text-gray-200">
+                    Infinite Drive offers endless gameplay without time pressure. Designed
+                    for stress-free sessions, this mode allows smooth driving and long
+                    uninterrupted play.
+                </p>
+            </div>
 
         </div>
-
-        <div class="ModeCard" id="duration" onclick='location.href="./Duration Mode.html"'>
-            <h1 class="heading">
-                Duration <br> Mode
-            </h1>
-
-            <p class="content">
-                Duration Mode Is One Of The Most Favourite Mode . Here Player Have To Score Maximum Score He Can
-                Achieve in a Particular Time Limit. Have To Collect Time Increaser Blocks .
-                <b>Max 100 Blocks for Increasing Duration and Score Highest Score.</b>
-            </p>
-
+        
+        <!-- Panels Container (Only show on mode selection) -->
+        <!-- Panels Container (Only show on mode selection) -->
+        <div id="modePanels" class="hidden fixed inset-x-0 bottom-0 z-20 flex justify-between gap-4 max-h-[40vh] p-4">
+        
+            <!-- About Panel (Left) -->
+            <div id="about" class="panel w-1/2 max-h-full overflow-y-auto rounded-t-2xl
+                        bg-gradient-to-b from-black/50 via-black/40 to-blue-950/30 p-6 backdrop-blur
+                        transition-transform duration-500 transform translate-y-full">
+                <h2 class="mb-2 text-2xl font-bold text-white">About Game</h2>
+                <p class="text-gray-200">
+                    This game was created by <strong>INJ KRISH</strong> over six months for learning and education.
+                </p>
+                <ul class="mt-4 list-disc space-y-2 pl-5 text-gray-200">
+                    <li><b>Casual Mode:</b> Practice and training</li>
+                    <li><b>Racing Mode:</b> F1-style racing</li>
+                    <li><b>Duration Mode:</b> Time-based scoring</li>
+                    <li><b>Infinite Drive:</b> Relaxed endless driving</li>
+                </ul>
+            </div>
+        
+            <!-- How To Play Panel (Right) -->
+            <div id="howto" class="panel w-1/2 max-h-full overflow-y-auto rounded-t-2xl
+                        bg-gradient-to-b from-black/50 via-black/40 to-blue-950/30 p-6 backdrop-blur
+                        transition-transform duration-500 transform translate-y-full">
+                <h2 class="mb-2 text-2xl font-bold text-white">How To Play</h2>
+                <ul class="mt-3 space-y-2 text-gray-200">
+                    <li><b>N</b> - Nitro Boost</li>
+                    <li><b>Space</b> - Reapply last move</li>
+                    <li><b>Accelerator</b> - Increase speed</li>
+                    <li><b>Brake</b> - Prevent blast (1s)</li>
+                    <li><b>Arrow Keys</b> - Car Controllers</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="ModeCard" id="infinite" onclick='location.href="./Infinite Drive.html"'>
-            <h1 class="heading">
-                Infinite <br> Drive
-            </h1>
+    </section>
 
-            <p class="content">
-                Infinite Drive Is a Mode Where Player Play This Mode To Beat His Own Best Score .
-                Infinite Drive Is Created to Play This Mode and Relax.
-                Here You Get Least Obstacles to Clear . As Mode Name It Doesn't Have End.
-                <b>Your PC Should Enough Capable To Load This Mode</b>
-            </p>
-
-        </div>
-
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
     <script src="js/Racing Car.js"></script>
-
 </body>
 
 </html>
