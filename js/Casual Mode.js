@@ -30,13 +30,13 @@ var score = 0, highestScoreCasualMode = 0, gameStatus = 1;
 
 var counterMusicPlayPause = 0;
 
-function createGrid(width){
+function createGrid(width) {
 
     gridCount = Math.round(width / common);
     const outlier = gridCount - gameGridCount;
 
-    startGrid = Math.round(outlier / 2);    
-    endGrid = Math.round(gridCount - (outlier / 2)) - 1;    
+    startGrid = Math.round(outlier / 2);
+    endGrid = Math.round(gridCount - (outlier / 2)) - 1;
 
     // console.log(gridCount, outlier, startGrid, endGrid, );
 
@@ -46,7 +46,7 @@ createGrid(width);
 function path() {
 
     start = startGrid * common;
-    end = ( endGrid + 1 ) * common;
+    end = (endGrid + 1) * common;
 
     // console.log(startGrid, endGrid);
     // console.log("Start - End", start, end);
@@ -405,9 +405,9 @@ const backupX = footPath[0].position.y;
 
 var carPositions = [];
 
-function calculateCarPositions(){
+function calculateCarPositions() {
     for (let index = 0; index < 4; index++) {
-        carPositions.push( start + ( index * distance ) + 25 );
+        carPositions.push(start + (index * distance) + 25);
     }
     // console.log(carPositions);
 }
@@ -418,14 +418,14 @@ car[0].draw();
 
 // const cars_x = [425, 575, 875, 425, 875, 425, 875, 875, 425, 575, 725, 575, 725, 575, 425, 875, 575, 875, 425, 425, 575, 725, 875];
 const cars_x = [
-  carPositions[0], carPositions[1], carPositions[3],
-  carPositions[0], carPositions[3], carPositions[0],
-  carPositions[3], carPositions[3], carPositions[0],
-  carPositions[1], carPositions[2], carPositions[1],
-  carPositions[2], carPositions[1], carPositions[0],
-  carPositions[3], carPositions[1], carPositions[3],
-  carPositions[0], carPositions[0], carPositions[1],
-  carPositions[2], carPositions[3]
+    carPositions[0], carPositions[1], carPositions[3],
+    carPositions[0], carPositions[3], carPositions[0],
+    carPositions[3], carPositions[3], carPositions[0],
+    carPositions[1], carPositions[2], carPositions[1],
+    carPositions[2], carPositions[1], carPositions[0],
+    carPositions[3], carPositions[1], carPositions[3],
+    carPositions[0], carPositions[0], carPositions[1],
+    carPositions[2], carPositions[3]
 ];
 var choice, cars_y, speedLimit = 10, respawnCar = 0;
 
@@ -1016,7 +1016,7 @@ if (parseInt(sessionStorage.casualModeVideoStatus) != 1) {
     stopVideo();
 }
 
-window.onresize = function(){
+window.onresize = function () {
     height = window.innerHeight;
     width = window.innerWidth;
     calculateCarPositions();
