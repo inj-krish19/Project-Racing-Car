@@ -513,7 +513,7 @@ function selectCar(index) {
             "scale-105",
             "bg-green-500/20"
         );
-      card.querySelector('p').classList.remove("text-green-400");
+        card.querySelector('p').classList.remove("text-green-400");
 
     });
 
