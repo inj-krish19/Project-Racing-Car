@@ -4,67 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./Mode Images/Duration Mode.png" type="image/x-icon">
-    </link>
-    <link rel="stylesheet" href="css/Duration Mode.css">
     <title>Duration Mode</title>
+
+    <link rel="shortcut icon" href="./Mode Images/Duration Mode.png" type="image/x-icon"></link>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body>
-    <h1 id="errorMessage">This Game Is Not Supported In Portrait Screen</h1>
-
-    <video id="durationModeVideo" autoplay src="./Videos/Duration Mode Intro.mp4" type="video/mp4">
-        Browser Not Supported
-    </video>
-    <button class="skip" onclick=stopVideo()>Skip Video</button>
-
-
-    <canvas id="myCanvas" class="hideAllContent">Your Browser Doesn't Support Game</canvas>
-    <div class="Controller" id="Controller">
-
-        <div class="RightLeft">
-            <button id="forLeft" onclick=buttonLeft()></button>
-            <button id="forRight" onclick=buttonRight()></button>
+<body class="bg-black text-white overflow-hidden">
+    
+    <div id="errorMessage"
+        class="hidden max-w-md w-full flex flex-col mx-auto my-8 rounded-2xl border border-white/20 bg-black/70 p-6 text-center shadow-2xl">
+    
+        <div class="mb-4 text-4xl">🚫</div>
+    
+        <h2 class="mb-2 text-2xl font-bold text-red-400">
+            Device Not Supported
+        </h2>
+    
+        <p class="text-gray-300 leading-relaxed">
+            Your screen is too small to display all game controls properly.
+            <br>
+            Please use a larger screen or rotate your device.
+        </p>
+    
+        <div class="mt-5 text-sm text-gray-400">
+            Minimum required resolution:
+            <br>
+            <span class="font-semibold text-white">900 x 500</span>
         </div>
-        <div class="UpDown">
-            <button id="forUp" onclick=buttonUp()></button>
-            <button id="forDown" onclick=buttonDown()></button>
+    
+    </div>
+
+    <!-- GAME WRAPPER -->
+    <div id="game-wrapper" class="relative w-screen h-screen overflow-hidden">
+    
+        <!-- INTRO VIDEO (VISIBLE FIRST) -->
+        <video id="durationModeVideo" class="absolute inset-0 z-10 w-full h-full object-cover" autoplay playsinline loop>
+            <source src="./Videos/Duration Mode Intro.mp4" type="video/mp4">
+        </video>
+    
+        <!-- SKIP BUTTON -->
+        <button onclick="stopVideo()"
+            class="skip absolute bottom-10 right-10 z-20 rounded-lg bg-black/60 px-4 py-2 text-sm backdrop-blur">
+            Skip
+        </button>
+    
+        <!-- GAME CANVAS (HIDDEN INITIALLY) -->
+        <canvas id="myCanvas" class="absolute inset-0 z-30 hidden"></canvas>
+    
+        <!-- MENU BAR -->
+        <div class="menuBar fixed top-4 left-4 z-40 hidden gap-2">
+    
+            <button onclick="location.href='./Racing Car.html'" id="Back"
+                class="h-12 w-12 rounded-full bg-purple-500/30 backdrop-blur flex items-center justify-center text-white hover:scale-105 active:scale-95 transition">
+    
+                <img src="./UI and Button Images/back.svg" alt="Back" class="h-6 w-6 pointer-events-none " />
+    
+            </button>
+    
+            <button onclick="PausexResume()" id="PauseResume"
+                class="h-12 w-12 rounded-full bg-sky-500/30 backdrop-blur flex items-center justify-center text-white hover:scale-105 active:scale-95 transition">
+    
+                <img id="statusIcon" src="./UI and Button Images/pause.svg" alt="Status"
+                    class="h-6 w-6 pointer-events-none " />
+            </button>
+    
+            <button onclick="MusicOnOff()" id="audioYesNo"
+                class="h-12 w-12 rounded-full bg-blue-500/30 backdrop-blur flex items-center justify-center text-white hover:scale-105 active:scale-95 transition">
+    
+                <img id="musicIcon" src="./UI and Button Images/musicon.svg" alt="Music"
+                    class="h-6 w-6 pointer-events-none " />
+            </button>
+    
+        </div>
+    
+    
+        <!-- TOOLBOX -->
+        <div class="toolBox fixed bottom-6 left-6 z-40 w-40 h-20 hidden">
+            <div class="pedals flex flex-row gap-4 hidden">
+                <button onclick="eventAccelerator()"
+                    class="h-16 w-16 rounded-full bg-green-500/30 backdrop-blur flex items-center justify-center">
+                    <img src="./UI and Button Images/accelerate.svg" alt="Accelerate"
+                        class="h-6 w-6 pointer-events-none " />
+                </button>
+                <button onclick="eventBrake()"
+                    class="h-16 w-16 rounded-full bg-red-500/30 backdrop-blur flex items-center justify-center ">
+                    <img src="./UI and Button Images/brake.svg" alt="Brake" class="h-6 w-6 pointer-events-none " />
+                </button>
+            </div>
+        </div>
+    
+        <!-- CONTROLLER -->
+        <div class="Controller fixed bottom-6 right-6 z-40 w-40 h-40 gap-4 hidden">
+    
+            <div class="RightLeft flex flex-col gap-4 hidden">
+                <button onclick="buttonLeft()"
+                    class="h-14 w-14 rounded-full bg-sky-500/30 backdrop-blur flex items-center justify-center">
+                    <img src="./UI and Button Images/left.svg" alt="Left" class="h-6 w-6 pointer-events-none " />
+                </button>
+                <button onclick="buttonRight()"
+                    class="h-14 w-14 rounded-full bg-sky-500/30 backdrop-blur flex items-center justify-center">
+                    <img src="./UI and Button Images/right.svg" alt="Right" class="h-6 w-6 pointer-events-none " />
+                </button>
+            </div>
+    
+            <div class="UpDown flex flex-col gap-4 hidden">
+                <button onclick="buttonUp()"
+                    class="h-14 w-14 rounded-full bg-sky-500/30 backdrop-blur flex items-center justify-center">
+                    <img src="./UI and Button Images/up.svg" alt="Up" class="h-6 w-6 pointer-events-none " />
+                </button>
+                <button onclick="buttonDown()"
+                    class="h-14 w-14 rounded-full bg-sky-500/30 backdrop-blur flex items-center justify-center">
+                    <img src="./UI and Button Images/down.svg" alt="Down" class="h-6 w-6 pointer-events-none " />
+                </button>
+            </div>
+    
+        </div>
+    
+        <!-- SCORE BOARD -->
+        <div class="scoreBoard fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden rounded-2xl bg-black/60 px-6 py-4 backdrop-blur border border-white/10 shadow-lg flex flex-col gap-2 min-w-[220px]">
+        
+            <div class="timer flex flex-row w-inherit items-center justify-center gap-2 text-sky-300">
+                <img src="./UI and Button Images/timer.svg">
+        
+                <h1 id="timeSeconds" class="text-lg font-bold tracking-wide">--</h1>
+            </div>
+        
+            <p id="score" class="text-center text-base font-semibold text-white">Score: 0</p>
+            <p id="scoreSession" class="text-center text-sm text-gray-300">Session Best: 0 </p>
+            <p id="scoreAllTime" class="text-center text-sm text-gray-400">All Time Best</p>
+
+        </div>
+
+    
+    </div>
+    
+    <!-- GAME OVER / ALERT PANEL -->
+    <div id="alertBox" class="alertBox fixed top-1/2 left-1/3 z-50 hidden flex justify-center items-center w-full px-4">
+    
+        <div class="w-full max-w-md rounded-2xl border border-white/20 bg-gradient-to-br from-sky-500/20 via-blue-600/20 to-purple-700/30 p-8 text-center shadow-2xl backdrop-blur">
+    
+            <!-- RESULT TEXT -->
+            <h1 id="result" class="mb-2 text-3xl font-extrabold tracking-wide text-white">
+                Game Over
+            </h1>
+    
+            <!-- PRAISE TEXT -->
+            <h3 id="praise" class="mb-6 text-sm font-medium text-sky-200">
+                Well played! Try again to beat your score.
+            </h3>
+    
+            <!-- REPLAY BUTTON -->
+            <button id="Replay" onclick="refreshPage()"
+                class="mx-auto flex items-center gap-3 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 px-6 py-3 font-bold text-black transition hover:scale-105 active:scale-95">
+    
+                <!-- SVG ICON -->
+                <img src="./UI and Button Images/replay.svg" alt="Replay" class="h-6 w-6 pointer-events-none " />
+                Replay
+            </button>
+    
         </div>
     </div>
 
-    <div class="toolBox">
-        <div class="pedals">
-            <button id="accelerator" onclick=eventAccelerator()></button>
-            <button id="brake" onclick=eventBrake()></button>
-        </div>
-    </div>
-
-    <div class="menuBar">
-        <button id="Back" onclick="location.href = './Racing Car.html'"></button>
-        <button id="PauseResume" onclick=PausexResume()></button>
-        <button id="audioYesNo" onclick=MusicOnOff()></button>
-    </div>
-
-    <div class="scoreBoard">
-        <p id="score">Score : 0</p>
-        <p id="scoreSession">Sessions' Highest Score : 0</p>
-        <p id="scoreAllTime">Best Score : </p>
-    </div>
 
     <div class="timer">
         <img src="./UI and Button Images/timer.png" alt="Time Remaining" id="timerPng">
         <h1 id="timeSeconds">--</h1>
-    </div>
-
-    <!--    NOT USED HERE   -->
-    <div class="messageBoard">
-        <p id="messageDistance"></p>
-    </div>
-
-    <div class="alertBox" id="alertBox">
-        <h1 id="result"></h1>
-        <h3 id="praise"></h3>
-        <button id="Replay" onclick=refreshPage()></button>
     </div>
 
     <script src="js/Duration Mode.js"></script>
