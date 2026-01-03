@@ -12,14 +12,15 @@ Till Learning Resize orr For Static Purpose Both Are 200
 And Dynamicity Will Be Applied After Learning 
 Event Listner Of Body And Windows        */
 
-height = canvas.height = Math.max(750, innerHeight) * 0.99;
-width = canvas.width = Math.max(1400, innerWidth);
+height = canvas.height = innerHeight;
+width = canvas.width = innerWidth;
 
-var start, end, dist, track_len, med = [], common;
+var start, end, dist, track_len, med = [], common = 50, startGrid, endGrid, gridCount, gameGridCount = 12;
 
 var key, l = 10, iteration_left = iteration_right = iteration_up = iteration_down = iterarion = 0;
 
-var speed = 0, flagforEnd = 0, acc = 0, brake = 1, counterPlayPause = 0;
+var speed = 0, flagforEnd = 0, acc = 0, brake = 1, counterPlayPause = 0, fluctuationOnDirection = 0.25;
+
 
 var val_x, val_y, i, j, limit_j = 10, max_limit = 50, distance = 150;
 
@@ -31,19 +32,38 @@ var score = 0, highestScoreInfiniteDrive = 0, gameStatus = 1;
 
 var counterMusicPlayPause = 0;
 
+function createGrid(width) {
+
+    gridCount = Math.round(width / common);
+    const outlier = gridCount - gameGridCount;
+
+    startGrid = Math.round(outlier / 2);
+    endGrid = Math.round(gridCount - (outlier / 2)) - 1;
+
+    // console.log(gridCount, outlier, startGrid, endGrid, );
+
+}
+createGrid(width);
+
 function path() {
 
-    common = 50;
+    start = startGrid * common;
+    end = (endGrid + 1) * common;
 
-    start = 400;
-    end = 1000;
+    // console.log(startGrid, endGrid);
+    // console.log("Start - End", start, end);
 
-    dist = end - start;
-    track_len = width;
+    dist = gameGridCount * common;
+    track_len = height;
 
-    med[0] = dist - common;
-    med[1] = dist + (2 * common);
-    med[2] = dist + (5 * common);
+    // console.log("Distance & len(Track)", dist, track_len);
+
+    // let partDistance = dist - 
+    med[0] = start + (3 * dist / 12);
+    med[1] = start + (6 * dist / 12);
+    med[2] = start + (9 * dist / 12);
+
+    // console.log("Splitters", med[0], med[1], med[2]);
 
     c.beginPath();
     c.moveTo(start, 0);
@@ -57,6 +77,8 @@ function path() {
     c.lineWidth = 20;
     c.strokeStyle = "#aaaccc";
     c.stroke();
+
+    // console.log(start, track_len, end);
 
     c.fillStyle = "black";
     c.fillRect(start, 0, dist, track_len);
@@ -87,7 +109,6 @@ function path() {
     ctx.closePath();
 
 }
-
 path();
 
 class FootPath {
@@ -186,7 +207,7 @@ function getBackgroundNumber() {
 function putImage() {
     if (indexForBackground == 0 || indexForBackground == 5) {
         c.drawImage(currentBackground, 0, 0, width, height, 0, 0, width, height);
-        c.drawImage(currentBackground, 0, 0, width, height, 950, 0, width, height);
+        c.drawImage(currentBackground, 0, 0, width, height, end, 0, width, height);
     }
     else if (indexForBackground == 1 || indexForBackground == 4 || indexForBackground == 8) {
         c.drawImage(currentBackground, 0, 0, width, height, 0, 0, width, height);
@@ -326,9 +347,8 @@ class Start {
 const footPath = [];
 const car = [];
 
-car.push(new Car(725, height * 0.7, 100, 8));
 
-val_x = 475;
+val_x = start + (distance / 2);
 val_y = 300;
 
 function madeTrack() {
@@ -341,14 +361,15 @@ function madeTrack() {
             val_y += distance;
         }
 
-        val_x += 150;
+        val_x += distance;
     }
 
 
 
     let lj = max_limit - limit_j;
 
-    val_x = 475;
+    val_x = start + (gameGridCount * 50 / 8);
+    // console.log("val(x)", val_x);
 
     for (i = 0; i < 4; i++) {
         val_y = -100;
@@ -357,7 +378,7 @@ function madeTrack() {
             footPath[(4 * limit_j) + ((lj * i) + j)].draw();
             val_y -= distance;
         }
-        val_x += 150;
+        val_x += distance;
     }
 }
 
@@ -374,7 +395,7 @@ function retrack() {
             footPath[(4 * limit_j) + ((lj * i) + j)].draw();
             val_y -= distance;
         }
-        val_x += 150;
+        val_x += distance;
     }
 
 }
@@ -382,9 +403,30 @@ function retrack() {
 madeTrack();
 const backupX = footPath[0].position.y;
 
+var carPositions = []
+
+function calculateCarPositions() {
+    for (let index = 0; index < 4; index++) {
+        carPositions.push(start + (index * distance) + 25);
+    }
+    // console.log(carPositions);
+}
+calculateCarPositions()
+
+car.push(new Car(carPositions[2], height * 0.7, 100, 8));
 car[0].draw();
 
-const cars_x = [425, 575, 875, 425, 875, 425, 875, 875, 425, 575, 725, 575, 725, 575, 425, 875, 575, 875, 425, 425, 575, 725, 875];
+// const cars_x = [425, 575, 875, 425, 875, 425, 875, 875, 425, 575, 725, 575, 725, 575, 425, 875, 575, 875, 425, 425, 575, 725, 875];
+const cars_x = [
+    carPositions[0], carPositions[1], carPositions[3],
+    carPositions[0], carPositions[3], carPositions[0],
+    carPositions[3], carPositions[3], carPositions[0],
+    carPositions[1], carPositions[2], carPositions[1],
+    carPositions[2], carPositions[1], carPositions[0],
+    carPositions[3], carPositions[1], carPositions[3],
+    carPositions[0], carPositions[0], carPositions[1],
+    carPositions[2], carPositions[3]
+];
 var choice, cars_y, speedLimit = 10, respawnCar = 0;
 
 speed = car[0].speed;
@@ -398,7 +440,7 @@ for (let i = 1; i < 40; i++) {
 
 }
 
-const startLabel = new Start(400, 20);
+const startLabel = new Start(start, 20);
 // const endLabel = new End(400, ((car.length * 300) + 150000) * -1);
 
 
@@ -521,19 +563,19 @@ function gameOver() {
     audios[9].play();
 
     c.fillStyle = "aqua";
-    c.fillRect(start - 10, (height / 2) - 150, dist + 20, startLabel.area);
+    c.fillRect(start - 10, (height / 2) - distance, dist + 20, startLabel.area);
 
     c.fillStyle = "blue";
-    c.fillRect(start - 10, (height / 2) - 150, dist + 20, 10);
+    c.fillRect(start - 10, (height / 2) - distance, dist + 20, 10);
 
     c.fillStyle = "blue";
-    c.fillRect(start - 10, (height / 2) - 150, 10, startLabel.area);
+    c.fillRect(start - 10, (height / 2) - distance, 10, startLabel.area);
 
     c.fillStyle = "blue";
-    c.fillRect(start + dist, (height / 2) - 150, 10, startLabel.area);
+    c.fillRect(start + dist, (height / 2) - distance, 10, startLabel.area);
 
     c.fillStyle = "blue";
-    c.fillRect(start - 10, (height / 2) - 150 + startLabel.area, dist + 20, 10);
+    c.fillRect(start - 10, (height / 2) - distance + startLabel.area, dist + 20, 10);
 
     var gradient = c.createLinearGradient(0, 0, width, 0);
     gradient.addColorStop("0.22", "red");
@@ -696,7 +738,7 @@ function animate() {
     carBlast();
     flagforEnd = Colizon() * brake;
 
-    if (flagforEnd != 0) {
+    if (flagforEnd !== 0) {
         gameOver();
         allPause();
         givehighestScoreInfiniteDrive();
@@ -704,7 +746,7 @@ function animate() {
         document.getElementById('alertBox').style.display = 'block';
         return 0;
     }
-    else if (flagforEnd == 0) {
+    else if (flagforEnd === 0) {
         if (counterPlayPause == 0) {
             requestAnimationFrame(animate);
             // if (score < 300000 && speed <= 100) {
@@ -732,9 +774,7 @@ function animate() {
     }
 
     if (footPath[footPath.length - 1].position.y > 0) {
-        let foot = [475, 625, 775, 925];
         for (let i = 40; i < footPath.length; i++) {
-            // footPath[i].position.x = foot[i % 4];
             footPath[i].position.y = -100 - footPath[i].position.y;
             // console.log(i, footPath[i].position.y)
         }
@@ -761,11 +801,12 @@ function animate() {
 
 function PausexResume() {
     if (inCountdown == false) {
+        const icon = document.getElementById('statusIcon');
 
         if (counterPlayPause == 0) {
             counterPlayPause = 1;
             audios[22].pause();
-            document.getElementById('PauseResume').style.backgroundImage = "url('./UI and Button Images/play.png')";
+            icon.src = "./UI and Button Images/play.svg"
         } else {
             counterPlayPause = 0;
             animate();
@@ -773,24 +814,25 @@ function PausexResume() {
             if (counterMusicPlayPause == 0) {
                 audios[22].play();
             }
-            document.getElementById('PauseResume').style.backgroundImage = "url('./UI and Button Images/pause.png')";
+            icon.src = "./UI and Button Images/pause.svg"
         }
     }
 }
 
 function MusicOnOff() {
     if (inCountdown == false) {
+        const icon = document.getElementById('musicIcon');
 
         if (counterMusicPlayPause == 0) {
             counterMusicPlayPause = 1;
             audios[22].pause();
-            document.getElementById('audioYesNo').style.backgroundImage = "url('./UI and Button Images/MUSICOFF.png')";
+            icon.src = "./UI and Button Images/musicoff.svg"
         } else {
             counterMusicPlayPause = 0;
             if (counterPlayPause == 0) {
                 audios[22].play();
             }
-            document.getElementById('audioYesNo').style.backgroundImage = "url('./UI and Button Images/MUSICON.png')";
+            icon.src = "./UI and Button Images/musicon.svg"
         }
     }
 }
@@ -811,18 +853,20 @@ function buttonDown() {
 }
 
 function goLeft() {
-    if (car[0].position.x > 425 && iteration_left < 15) {
+    if (car[0].position.x > carPositions[0] && iteration_left < 15) {
         requestAnimationFrame(goLeft);
         car[0].position.x -= l;
+        car[0].position.y -= fluctuationOnDirection;
         iteration_left++;
     }
     else if (iteration_left === 15) { iteration_left = 0; }
 }
 
 function goRight() {
-    if (car[0].position.x < 875 && iteration_right < 15) {
+    if (car[0].position.x < carPositions[3] && iteration_right < 15) {
         requestAnimationFrame(goRight);
         car[0].position.x += l;
+        car[0].position.y -= fluctuationOnDirection;
         iteration_right++;
     }
     else if (iteration_right === 15) { iteration_right = 0; }
@@ -958,37 +1002,30 @@ function stopVideo() {
     document.getElementById("InfiniteDriveVideo").style.display = "none";
     document.querySelector(".skip").style.display = "none";
     document.getElementById("myCanvas").style.display = "block";
-    document.querySelector(".Controller").style.display = "block";
-    document.querySelector(".RightLeft").style.display = "block";
-    document.querySelector(".UpDown").style.display = "block";
+    document.querySelector(".Controller").classList.add('!flex', '!flex-col');
+    document.querySelector(".RightLeft").classList.add('!flex', '!flex-row');
+    document.querySelector(".UpDown").classList.add('!flex', '!flex-row');
     document.querySelector(".toolBox").style.display = "block";
-    document.querySelector(".pedals").style.display = "block";
-    document.querySelector(".menuBar").style.display = "block";
+    document.querySelector(".pedals").classList.add('!flex', '!flex-row');
+    document.querySelector(".menuBar").classList.add('!flex', '!flex-row');
     document.querySelector(".scoreBoard").style.display = "block";
-    document.querySelector(".messageBoard").style.display = "block";
     makeCountDown();
 }
 
 
 var aboutVideo = document.getElementById('InfiniteDriveVideo');
-aboutVideo.onended = function () {
-    aboutVideo.pause();
-    document.getElementById("InfiniteDriveVideo").style.display = "none";
-    document.querySelector(".skip").style.display = "none";
-    document.getElementById("myCanvas").style.display = "block";
-    document.querySelector(".Controller").style.display = "block";
-    document.querySelector(".RightLeft").style.display = "block";
-    document.querySelector(".UpDown").style.display = "block";
-    document.querySelector(".toolBox").style.display = "block";
-    document.querySelector(".pedals").style.display = "block";
-    document.querySelector(".menuBar").style.display = "block";
-    document.querySelector(".scoreBoard").style.display = "block";
-    document.querySelector(".messageBoard").style.display = "block";
-    makeCountDown();
-}
+aboutVideo.onended = () => { stopVideo(); }
 
 if (parseInt(sessionStorage.infiniteDriveVideoStatus) != 1) {
     sessionStorage.infiniteDriveVideoStatus = 1;
 } else {
     stopVideo();
+}
+
+window.onresize = function () {
+    height = window.innerHeight;
+    width = window.innerWidth;
+    calculateCarPositions();
+    car[0].position.x = carPositions[2];
+    window.reload();
 }
