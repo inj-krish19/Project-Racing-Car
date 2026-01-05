@@ -36,18 +36,18 @@ Anyone can access, share, modify, or clone this game freely.
 - Press **`Space`** to redo the previous move.  
 
 ### 🔹 Top Left Buttons  
-![Back](UI%20and%20Button%20Images/Back.png) 
-![Play](UI%20and%20Button%20Images/play.png)
-![Pause](UI%20and%20Button%20Images/pause.png)
-![Music On](UI%20and%20Button%20Images/MUSICON.png)
-![Music Off](UI%20and%20Button%20Images/MUSICOFF.png)
+![Back](UI%20and%20Button%20Images/back.svg) 
+![Play](UI%20and%20Button%20Images/play.svg)
+![Pause](UI%20and%20Button%20Images/pause.svg)
+![Music On](UI%20and%20Button%20Images/musicon.svg)
+![Music Off](UI%20and%20Button%20Images/musicoff.svg)
 - **Back:** Redirects to car model and mode selection.  
 - **Play / Pause:** Pause or resume the game from the last move.  
 - **Music On / Off:** Toggle background music.  
 
 ### 🔹 Bottom Left Buttons  
-![Accelerator](UI%20and%20Button%20Images/accelerator.png)
-![Brake](UI%20and%20Button%20Images/brake.png)
+![Accelerator](UI%20and%20Button%20Images/accelerate.svg)
+![Brake](UI%20and%20Button%20Images/brake.svg)
 - **Accelerator:** Increase car speed. 
 - **Brake:** Prevent car blast for 1 second.  
 
@@ -60,10 +60,10 @@ Anyone can access, share, modify, or clone this game freely.
 - Includes a time stamp and a blinking message indicating gameplay updates.  
 
 ### 🔹 Right Bottom Buttons  
-![Left](UI%20and%20Button%20Images/Left.png)
-![Right](UI%20and%20Button%20Images/Right.png)
-![Up](UI%20and%20Button%20Images/Up.png)
-![Down](UI%20and%20Button%20Images/Down.png)
+![Left](UI%20and%20Button%20Images/left.svg)
+![Right](UI%20and%20Button%20Images/right.svg)
+![Up](UI%20and%20Button%20Images/up.svg)
+![Down](UI%20and%20Button%20Images/down.svg)
 - **Left:** Change lane to the left.  
 - **Right:** Change lane to the right.  
 - **Up:** Move up on the track with a slight speed boost.  
