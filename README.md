@@ -45,11 +45,11 @@ Anyone can access, share, modify, or clone this game freely.
 
 ### 🔹 Top Left Buttons
 
-![Back](UI%20and%20Button%20Images/Back.png)
-![Play](UI%20and%20Button%20Images/play.png)
-![Pause](UI%20and%20Button%20Images/pause.png)
-![Music On](UI%20and%20Button%20Images/MUSICON.png)
-![Music Off](UI%20and%20Button%20Images/MUSICOFF.png)
+![Back](UI%20and%20Button%20Images/back.svg)
+![Play](UI%20and%20Button%20Images/play.svg)
+![Pause](UI%20and%20Button%20Images/pause.svg)
+![Music On](UI%20and%20Button%20Images/musicon.svg)
+![Music Off](UI%20and%20Button%20Images/musicoff.svg)
 
 - **Back:** Redirects to car model and mode selection.
 - **Play / Pause:** Pause or resume the game from the last move.
