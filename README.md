@@ -2,6 +2,12 @@
 
 ![F1 Thunder](Mode%20Images/Car%20Racing.png)
 
+[![Listed on DEAD.ARMY](https://dead.army/badges/stats/f1-thunder-80904a)](https://dead.army/go/badge/f1-thunder-80904a?utm_source=badge&utm_medium=readme&utm_campaign=listed)
+
+**_Play Game :_** https://f1thunder.vercel.app
+<br>
+**_DEAD ARMY :_** https://dead.army/games/f1-thunder-80904a
+
 **Author:** INJ KRISH
 
 This game was made in six months for education and learning purposes. It is user-friendly and has been well received by players.
